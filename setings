@@ -1,6 +1,33 @@
+      #include "./version.h"
+
+// Debag
+// Where Do you want to send debug output?
+#define DBG_OUTPUT_PORT Serial
+
+// Extra Debag
+// Uncommment if you'd like even more debug information
+// #define EXTRA_DEBUG
+      
       WiFi.mode(WIFI_STA);
       WiFi.disconnect();      //  https://starter-kit.nettigo.pl/2018/02/nodemcu-praca-trybie-ap-czyli-wlasne-wifi/
       delay(500);
       
+void setup(void) {      
+  DBG_OUTPUT_PORT.begin(115200);
+  DBG_OUTPUT_PORT.setDebugOutput(false);
+  #ifdef EXTRA_DEBUG
+  DBG_OUTPUT_PORT.setDebugOutput(true);
+  #endif
+      DBG_OUTPUT_PORT.printf("\n\nESPrinkler2 %s compiled %s %s %s\n", VERSION, __DATE__, __TIME__, __FILE__);
       
-      
+}
+
+void loop() {
+
+          #ifdef EXTRA_DEBUG
+          DBG_OUTPUT_PORT.printf("clearingTimer id=%d\n", *id);
+          #endif
+
+          DBG_OUTPUT_PORT.printf("NTP Error %d\n", event);
+
+}
