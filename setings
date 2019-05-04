@@ -1,0 +1,6 @@
+      WiFi.mode(WIFI_STA);
+      WiFi.disconnect();      //  https://starter-kit.nettigo.pl/2018/02/nodemcu-praca-trybie-ap-czyli-wlasne-wifi/
+      delay(500);
+      
+      
+      
