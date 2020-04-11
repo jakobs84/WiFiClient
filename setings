@@ -12,6 +12,14 @@
       WiFi.disconnect();      //  https://starter-kit.nettigo.pl/2018/02/nodemcu-praca-trybie-ap-czyli-wlasne-wifi/
       delay(500);
       
+      //    https://github.com/esp8266/Arduino/issues/2593
+      //
+      //    while (WiFi.localIP().toString() == "0.0.0.0") {
+      //    delay(500);
+      //    DBG_OUTPUT_PORT.print(".");
+      //    }
+      //
+      //
 void setup(void) {      
   DBG_OUTPUT_PORT.begin(115200);
   DBG_OUTPUT_PORT.setDebugOutput(false);
